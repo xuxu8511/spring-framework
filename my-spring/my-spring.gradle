@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.0.21.BUILD-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    optional("cn.hutool:hutool-all:5.7.22")
+    optional("cglib:cglib:3.3.0")
+}
