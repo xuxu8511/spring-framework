@@ -163,7 +163,7 @@ public class ApplicationContext implements BeanFactory {
 			//步骤6，初始化后
 			//类似，步骤3，跳过
 
-			//步骤7，AOP
+			//步骤7，transactional AOP
 			if (clazzObject.isAnnotationPresent(Transactional.class)) {
 				Enhancer enhancer = new Enhancer();
 				enhancer.setSuperclass(clazzObject);
