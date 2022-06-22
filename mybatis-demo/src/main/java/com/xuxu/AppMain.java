@@ -19,5 +19,7 @@ public class AppMain {
 		//System.out.println("lubanFactoryBean: " + context.getBean(XuxuMapper.class));
 
 		System.out.println("this is test demo");
+
+		System.out.println("this is test demo333");
 	}
 }
