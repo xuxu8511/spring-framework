@@ -18,7 +18,7 @@ public class AppMain {
 		System.out.println(context.getBean("&xuXuFactoryBean") instanceof XuxuMapper);
 		//System.out.println("lubanFactoryBean: " + context.getBean(XuxuMapper.class));
 
-		System.out.println("this is test demo");
+		System.out.println("this is test demo222");
 
 		System.out.println("this is test demo333");
 	}
