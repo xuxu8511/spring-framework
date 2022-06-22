@@ -13,5 +13,7 @@ public class Main {
 
 		UserService bean = applicationContext.getBean(UserService.class);
 		bean.test();
+
+
 	}
 }
