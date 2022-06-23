@@ -10,27 +10,21 @@ import java.lang.reflect.Proxy;
  * @author xuxu
  * @date 2022/6/21
  */
-public class XuXuFactoryBean implements FactoryBean {
-
+public class ProxyFactoryBean implements FactoryBean {
 	private Class mapperInterface;
-
-	public XuXuFactoryBean(Class mapperInterface0) {
+	public ProxyFactoryBean(Class mapperInterface0) {
 		this.mapperInterface = mapperInterface0;
 	}
-
 	@Override
 	public Object getObject() {
-
-		InvocationHandler handler = new InvocationHandler() {
+		return Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{mapperInterface}, new InvocationHandler() {
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-				return method.invoke(this, args);
+				System.out.println(method.getName());
+				return null;
 			}
-		};
-
-		return Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{mapperInterface}, handler);
+		});
 	}
-
 	@Override
 	public Class<?> getObjectType() {
 		return mapperInterface;

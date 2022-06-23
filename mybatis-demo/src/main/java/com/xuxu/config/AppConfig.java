@@ -1,6 +1,6 @@
 package com.xuxu.config;
 
-import com.xuxu.bean.BeanDefinitionRegistrar;
+import com.xuxu.bean.MyBeanDefinitionRegistrar;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -11,6 +11,6 @@ import org.springframework.context.annotation.Import;
  */
 @ComponentScan("com.xuxu")
 @Configuration
-@Import(BeanDefinitionRegistrar.class)
+@Import(MyBeanDefinitionRegistrar.class)
 public class AppConfig {
 }

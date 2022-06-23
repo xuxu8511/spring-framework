@@ -11,15 +11,15 @@ import org.springframework.core.type.AnnotationMetadata;
  * @author xuxu
  * @date 2022/6/21
  */
-public class BeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+public class MyBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
+
 	@Override
 	public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
 
-
 		AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition().getBeanDefinition();
-		beanDefinition.setBeanClass(XuXuFactoryBean.class);
+		beanDefinition.setBeanClass(ProxyFactoryBean.class);
 		beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(UserMapper.class);
-		beanDefinitionRegistry.registerBeanDefinition("xuXuFactoryBean", beanDefinition);
 
+		beanDefinitionRegistry.registerBeanDefinition("userMapper", beanDefinition);
 	}
 }
