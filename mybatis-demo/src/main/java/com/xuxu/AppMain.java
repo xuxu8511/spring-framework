@@ -1,7 +1,6 @@
 package com.xuxu;
 
 import com.xuxu.config.AppConfig;
-import com.xuxu.doo.UserMapper;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -31,9 +30,11 @@ public class AppMain {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
+		System.out.println("lubanFactoryBean: " + context.getBean("xuXuFactoryBean"));
+		System.out.println("lubanFactoryBean: " + context.getBean("&xuXuFactoryBean"));
+		//System.out.println(context.getBean("&xuXuFactoryBean") instanceof XuxuMapper);
+		//System.out.println("lubanFactoryBean: " + context.getBean(XuxuMapper.class));
 
-		UserMapper userMapper = context.getBean(UserMapper.class);
-		userMapper.selectUser(11L);
-
+		System.out.println("this is test demo222");
 	}
 }
